@@ -1,6 +1,6 @@
-variable "public_ip_prefixs" {
+variable "public_ip_prefixes" {
   description = <<EOT
-Map of public_ip_prefixs, attributes below
+Map of public_ip_prefixes, attributes below
 Required:
     - location
     - name
@@ -20,10 +20,10 @@ EOT
     name                = string
     resource_group_name = string
     custom_ip_prefix_id = optional(string)
-    ip_version          = optional(string, "IPv4")
-    prefix_length       = optional(number, 28)
-    sku                 = optional(string, "Standard")
-    sku_tier            = optional(string, "Regional")
+    ip_version          = optional(string) # Default: "IPv4"
+    prefix_length       = optional(number) # Default: 28
+    sku                 = optional(string) # Default: "Standard"
+    sku_tier            = optional(string) # Default: "Regional"
     tags                = optional(map(string))
     zones               = optional(set(string))
   }))

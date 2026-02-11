@@ -1,5 +1,5 @@
-resource "azurerm_public_ip_prefix" "public_ip_prefixs" {
-  for_each = var.public_ip_prefixs
+resource "azurerm_public_ip_prefix" "public_ip_prefixes" {
+  for_each = var.public_ip_prefixes
 
   location            = each.value.location
   name                = each.value.name
