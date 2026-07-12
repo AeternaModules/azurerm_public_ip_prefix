@@ -1,3 +1,7 @@
+output "public_ip_prefixes_id" {
+  description = "Map of id values across all public_ip_prefixes, keyed the same as var.public_ip_prefixes"
+  value       = { for k, v in azurerm_public_ip_prefix.public_ip_prefixes : k => v.id }
+}
 output "public_ip_prefixes_custom_ip_prefix_id" {
   description = "Map of custom_ip_prefix_id values across all public_ip_prefixes, keyed the same as var.public_ip_prefixes"
   value       = { for k, v in azurerm_public_ip_prefix.public_ip_prefixes : k => v.custom_ip_prefix_id }
